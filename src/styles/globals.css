@@ -1,0 +1,22 @@
+/* Apply default dark theme before JS loads to prevent flash */
+:root:not([data-theme]) {
+  --bb-bg: #0d1117;
+  --bb-surface: #161b22;
+  --bb-surface-alt: #1c2433;
+  --bb-surface-raised: #21262d;
+  --bb-border: #30363d;
+  --bb-border-subtle: #21262d;
+  --bb-text: #e6edf3;
+  --bb-text-muted: #8b949e;
+  --bb-text-dim: #656d76;
+  --bb-sidebar: #0d1117;
+  --bb-sidebar-text: #e6edf3;
+  --bb-sidebar-muted: #8b949e;
+  --bb-sidebar-border: #21262d;
+  --bb-topbar: #161b22;
+  --background: #0d1117;
+  --foreground: #e6edf3;
+  --card: #161b22;
+  --card-foreground: #e6edf3;
+  --border: #30363d;
+}
