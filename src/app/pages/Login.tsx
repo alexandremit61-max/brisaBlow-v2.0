@@ -54,12 +54,9 @@ export default function Login() {
             <img src={jangadaLogo} alt="brisaBLOW" className="w-10 h-10 object-contain" />
           </div>
           <h1 className="text-3xl font-black tracking-tight mb-1.5">
-            <span style={{ color: 'var(--bb-text)' }}>brisa</span>
             <span style={{ color: 'var(--bb-orange)' }}>BLOW</span>
           </h1>
-          <p className="text-xs tracking-widest uppercase" style={{ color: 'var(--bb-text-dim)' }}>
-            Cockpit Técnico & Hub de Automação IA
-          </p>
+          
         </div>
 
         {/* Card */}
@@ -140,13 +137,13 @@ export default function Login() {
                 boxShadow: '0 4px 20px rgba(0,217,255,0.3)',
               }}
             >
-              Acessar Cockpit
+              Acessar BLOW
             </Button>
           </form>
         </div>
 
         <p className="text-center text-xs mt-6" style={{ color: 'var(--bb-text-dim)' }}>
-          brisaBLOW v2.0 · Sistema de Monitoramento e Automação
+          BLOW v1.0 · Sistema de Monitoramento e Automação
         </p>
       </div>
     </div>

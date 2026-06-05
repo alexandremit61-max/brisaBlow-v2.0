@@ -84,7 +84,6 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
               >
                 <img src={jangadaLogo} alt="Brisanet jangada" className="w-8 h-8 object-contain" />
                 <h1 className="text-xl font-bold leading-none">
-                  <span style={{ color: 'var(--bb-sidebar-text)' }}>brisa</span>
                   <span style={{ color: 'var(--bb-orange)' }}>BLOW</span>
                 </h1>
               </button>

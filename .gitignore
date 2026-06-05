@@ -1,1 +1,31 @@
-node_modules
+# 1. Credenciais e Variáveis de Ambiente
+.env
+config/secrets.yml
+*.key
+
+# 2. Dependências e Pacotes (Nunca versione bibliotecas externas)
+node_modules/
+vendor/
+packages/
+
+# 3. Arquivos de Build e Compilação
+dist/
+build/
+out/
+*.class
+*.exe
+
+# 4. Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# 5. Logs e Arquivos Temporários
+*.log
+*.tmp
+*.swp
+
+# 6. Configurações de IDEs e Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*

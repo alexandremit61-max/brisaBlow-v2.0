@@ -19,7 +19,7 @@ function ThemedApp() {
       document.head.appendChild(link);
     }
     link.href = jangadaLogo;
-    document.title = 'brisaBLOW';
+    document.title = 'BLOW';
   }, []);
 
   return <RouterProvider router={router} />;
