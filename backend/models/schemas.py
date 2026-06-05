@@ -1,4 +1,4 @@
-"""
+git add ."""
 Schemas Pydantic — contratos de entrada e saída da API Blow IA.
 """
 
