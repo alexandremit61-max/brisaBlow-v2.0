@@ -82,7 +82,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 onClick={() => window.location.reload()}
                 title="Atualizar página"
               >
-                <img src={jangadaLogo} alt="Brisanet jangada" className="w-8 h-8 object-contain" />
+                <img src={jangadaLogo} alt="BLOW" className="w-8 h-8 object-contain" />
                 <h1 className="text-xl font-bold leading-none">
                   <span style={{ color: 'var(--bb-orange)' }}>BLOW</span>
                 </h1>
@@ -95,7 +95,13 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
             </div>
           ) : (
             <div className="w-full flex justify-center">
-              <img src={jangadaLogo} alt="Brisanet" className="w-8 h-8 object-contain" />
+              <button
+                onClick={() => window.location.reload()}
+                title="Atualizar página"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img src={jangadaLogo} alt="BLOW" className="w-8 h-8 object-contain" />
+              </button>
             </div>
           )}
         </div>
