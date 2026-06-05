@@ -2,7 +2,7 @@
 
 /* ─── BrisaBLOW Design Tokens ─── */
 :root {
-  --font-size: 16px;
+  --font-size: 13px;
   --radius: 0.4rem;
 
   /* Light mode (day) */
@@ -220,4 +220,36 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+}
+
+/* ─── Fonte Responsiva por Dispositivo ─── */
+
+/* Mobile pequeno: até 479px (smartphones compactos) */
+@media (max-width: 479px) {
+  :root { --font-size: 13px; }
+}
+
+/* Mobile: 480px – 767px (smartphones padrão) */
+@media (min-width: 480px) and (max-width: 767px) {
+  :root { --font-size: 14px; }
+}
+
+/* Tablet: 768px – 1023px (iPad, tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root { --font-size: 15px; }
+}
+
+/* Desktop: 1024px – 1439px (notebooks, monitores comuns) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  :root { --font-size: 16px; }
+}
+
+/* Monitor grande: 1440px – 1919px (monitores Full HD / 2K) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  :root { --font-size: 17px; }
+}
+
+/* TV / 4K / Ultrawide: 1920px ou mais */
+@media (min-width: 1920px) {
+  :root { --font-size: 19px; }
 }
