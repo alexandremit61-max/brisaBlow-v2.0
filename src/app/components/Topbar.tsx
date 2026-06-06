@@ -182,6 +182,10 @@ export default function Topbar({ breadcrumb, onMenuClick }: TopbarProps) {
               </div>
 
               {/* Footer */}
+              {/* ═══════════════════════════════════════════════════════════════════════════
+                  APRESENTAÇÃO: Botão "Ver todos os alarmes" comentado temporariamente
+                  Descomentar quando liberar funcionalidade de Alarmes
+                  ═══════════════════════════════════════════════════════════════════════════
               <div className="px-4 py-3 border-t" style={{ borderColor: 'var(--bb-border)' }}>
                 <button
                   onClick={() => { navigate('/dashboard/alarmes'); setNotifOpen(false); }}
@@ -191,6 +195,7 @@ export default function Topbar({ breadcrumb, onMenuClick }: TopbarProps) {
                   Ver todos os alarmes →
                 </button>
               </div>
+              */}
             </div>
           )}
         </div>

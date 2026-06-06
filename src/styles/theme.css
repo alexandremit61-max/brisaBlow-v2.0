@@ -1,17 +1,18 @@
 @custom-variant dark (&:is(.dark *));
 
-/* ─── BrisaBLOW Design Tokens ─── */
+/* ─── BLOW Design Tokens ─── */
 :root {
-  --font-size: 16px;
+  /* ── Fonte base: mobile primeiro ── */
+  --font-size: 13px;
   --radius: 0.5rem;
 
-  /* Light mode (day) */
-  --bb-bg: #f0f4f8;
-  --bb-surface: #ffffff;
-  --bb-surface-alt: #f1f5f9;
-  --bb-surface-raised: #e8edf3;
-  --bb-border: #d0d7de;
-  --bb-border-subtle: #e2e8f0;
+  /* Light mode (day) - MUDANÇA: Tema claro ajustado para cinza mais suave, não dói nos olhos */
+  --bb-bg: #e8ecf1;
+  --bb-surface: #f5f7fa;
+  --bb-surface-alt: #edf0f5;
+  --bb-surface-raised: #e2e6ed;
+  --bb-border: #c8d0d9;
+  --bb-border-subtle: #dae0e8;
   --bb-text: #1a2332;
   --bb-text-muted: #4a5568;
   --bb-text-dim: #718096;
@@ -19,22 +20,22 @@
   --bb-sidebar-text: #e6edf3;
   --bb-sidebar-muted: #8b949e;
   --bb-sidebar-border: #2d3748;
-  --bb-topbar: #ffffff;
+  --bb-topbar: #f5f7fa;
 
-  /* Shared accent colors */
-  --bb-cyan: #00d9ff;
-  --bb-orange: #ff6b00;
-  --bb-green: #22c55e;
-  --bb-red: #ef4444;
-  --bb-purple: #a855f7;
-  --bb-yellow: #fbbf24;
+  /* Accent colors - MUDANÇA: Cores suaves para tema claro, mais naturais e profissionais */
+  --bb-cyan: #0284c7;
+  --bb-orange: #ea580c;
+  --bb-green: #16a34a;
+  --bb-red: #dc2626;
+  --bb-purple: #9333ea;
+  --bb-yellow: #ca8a04;
 
-  /* shadcn tokens - light */
-  --background: #f0f4f8;
+  /* shadcn tokens - light - MUDANÇA: Ajustado para combinar com tema cinza suave e cores naturais */
+  --background: #e8ecf1;
   --foreground: #1a2332;
-  --card: #ffffff;
+  --card: #f5f7fa;
   --card-foreground: #1a2332;
-  --popover: #ffffff;
+  --popover: #f5f7fa;
   --popover-foreground: #1a2332;
   --primary: #0284c7;
   --primary-foreground: #ffffff;
@@ -44,7 +45,7 @@
   --muted-foreground: #718096;
   --accent: #0284c7;
   --accent-foreground: #ffffff;
-  --destructive: #ef4444;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
   --border: #d0d7de;
   --input: #e2e8f0;
@@ -53,19 +54,19 @@
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --ring: #0284c7;
-  --chart-1: #00d9ff;
-  --chart-2: #22c55e;
-  --chart-3: #f97316;
-  --chart-4: #a855f7;
-  --chart-5: #fbbf24;
+  --chart-1: #0284c7;
+  --chart-2: #16a34a;
+  --chart-3: #ea580c;
+  --chart-4: #9333ea;
+  --chart-5: #ca8a04;
   --sidebar: #1a2332;
   --sidebar-foreground: #e6edf3;
-  --sidebar-primary: #00d9ff;
-  --sidebar-primary-foreground: #000000;
+  --sidebar-primary: #0284c7;
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #243048;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #2d3748;
-  --sidebar-ring: #00d9ff;
+  --sidebar-ring: #0284c7;
 }
 
 /* Dark mode (night) */
@@ -84,6 +85,14 @@
   --bb-sidebar-muted: #8b949e;
   --bb-sidebar-border: #21262d;
   --bb-topbar: #161b22;
+
+  /* Accent colors - Cores vibrantes neon para tema dark */
+  --bb-cyan: #00d9ff;
+  --bb-orange: #ff6b00;
+  --bb-green: #22c55e;
+  --bb-red: #ef4444;
+  --bb-purple: #a855f7;
+  --bb-yellow: #fbbf24;
 
   /* shadcn tokens - dark */
   --background: #0d1117;
@@ -220,4 +229,36 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+}
+
+/* ─── Fonte Responsiva por Dispositivo ─── */
+
+/* Mobile pequeno: até 479px (smartphones compactos) */
+@media (max-width: 479px) {
+  :root { --font-size: 13px; }
+}
+
+/* Mobile: 480px – 767px (smartphones padrão) */
+@media (min-width: 480px) and (max-width: 767px) {
+  :root { --font-size: 14px; }
+}
+
+/* Tablet: 768px – 1023px (iPad, tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root { --font-size: 15px; }
+}
+
+/* Desktop: 1024px – 1439px (notebooks, monitores comuns) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  :root { --font-size: 16px; }
+}
+
+/* Monitor grande: 1440px – 1919px (monitores Full HD / 2K) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  :root { --font-size: 17px; }
+}
+
+/* TV / 4K / Ultrawide: 1920px ou mais */
+@media (min-width: 1920px) {
+  :root { --font-size: 19px; }
 }

@@ -1,35 +1,40 @@
+// MUDANÇA: Removido Sparkles, adicionado AIIcon personalizado
+// APRESENTAÇÃO: Imports removidos temporariamente: LayoutDashboard, Network, Radio, Antenna, AlertTriangle, BarChart3
 import { NavLink } from 'react-router';
 import {
-  LayoutDashboard,
-  Network,
-  Radio,
-  Antenna,
-  AlertTriangle,
-  BarChart3,
   Settings,
   ChevronLeft,
-  Sparkles,
   X,
 } from 'lucide-react';
 import jangadaLogo from '../../imports/jangada-brisanet.png';
 import { useState } from 'react';
+import AIIcon from './AIIcon';
 
 const menuItems = [
-  {
-    category: 'OPERAÇÃO',
-    items: [
-      { label: 'Painel', icon: LayoutDashboard, path: '/dashboard' },
-      { label: 'METRO', icon: Network, path: '/dashboard/metro' },
-      { label: 'DWDM', icon: Radio, path: '/dashboard/dwdm' },
-      { label: 'Sites 5G', icon: Antenna, path: '/dashboard/sites-5g' },
-    ],
-  },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // APRESENTAÇÃO: Seção OPERAÇÃO comentada temporariamente
+  // Descomentar para liberar: Painel, METRO, DWDM, Sites 5G
+  // ═══════════════════════════════════════════════════════════════════════════
+  // {
+  //   category: 'OPERAÇÃO',
+  //   items: [
+  //     { label: 'Painel', icon: LayoutDashboard, path: '/dashboard' },
+  //     { label: 'METRO', icon: Network, path: '/dashboard/metro' },
+  //     { label: 'DWDM', icon: Radio, path: '/dashboard/dwdm' },
+  //     { label: 'Sites 5G', icon: Antenna, path: '/dashboard/sites-5g' },
+  //   ],
+  // },
   {
     category: 'INTELIGÊNCIA',
     items: [
-      { label: 'Alarmes', icon: AlertTriangle, path: '/dashboard/alarmes', badge: 3 },
-      { label: 'Análise', icon: BarChart3, path: '/dashboard/analise' },
-      { label: 'Blow IA', icon: Sparkles, path: '/dashboard/blow-ia', aiItem: true },
+      // ═══════════════════════════════════════════════════════════════════════════
+      // APRESENTAÇÃO: Alarmes e Análise comentados temporariamente
+      // Descomentar para liberar funcionalidades completas
+      // ═══════════════════════════════════════════════════════════════════════════
+      // { label: 'Alarmes', icon: AlertTriangle, path: '/dashboard/alarmes', badge: 3 },
+      // { label: 'Análise', icon: BarChart3, path: '/dashboard/analise' },
+      // MUDANÇA: Substituído Sparkles por AIIcon personalizado (robô com anéis)
+      { label: 'Blow IA', icon: AIIcon, path: '/dashboard/blow-ia', aiItem: true },
     ],
   },
   {
@@ -82,9 +87,8 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 onClick={() => window.location.reload()}
                 title="Atualizar página"
               >
-                <img src={jangadaLogo} alt="Brisanet jangada" className="w-8 h-8 object-contain" />
+                <img src={jangadaLogo} alt="BLOW" className="w-8 h-8 object-contain" />
                 <h1 className="text-xl font-bold leading-none">
-                  <span style={{ color: 'var(--bb-sidebar-text)' }}>brisa</span>
                   <span style={{ color: 'var(--bb-orange)' }}>BLOW</span>
                 </h1>
               </button>
@@ -96,7 +100,13 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
             </div>
           ) : (
             <div className="w-full flex justify-center">
-              <img src={jangadaLogo} alt="Brisanet" className="w-8 h-8 object-contain" />
+              <button
+                onClick={() => window.location.reload()}
+                title="Atualizar página"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img src={jangadaLogo} alt="BLOW" className="w-8 h-8 object-contain" />
+              </button>
             </div>
           )}
         </div>

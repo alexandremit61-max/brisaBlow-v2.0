@@ -1,5 +1,7 @@
+// MUDANÇA: Removido Sparkles, adicionado AIIcon personalizado
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { Mic, Send, Plus, Sparkles, Copy, ThumbsUp, ThumbsDown, RotateCcw, MessageSquare, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Mic, Send, Plus, Copy, ThumbsUp, ThumbsDown, RotateCcw, MessageSquare, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
+import AIIcon from '../components/AIIcon';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -25,7 +27,7 @@ const API_BASE = '/api/blow';
 const WELCOME_MESSAGE: Message = {
   id: 'welcome',
   role: 'assistant',
-  content: `Olá! Sou a **Blow IA Inteligência**, assistente técnica integrada ao cockpit **brisaBLOW**.
+  content: `Olá! Sou a **Blow IA Inteligência**, assistente técnica integrada ao cockpit **BLOW**.
 
 Posso ajudar você com:
 
@@ -308,7 +310,13 @@ export default function BlowIA() {
   const isEmptyChat = activeConv?.messages.length === 1 && activeConv.messages[0].role === 'assistant';
 
   return (
-    <div className="flex h-full overflow-hidden" style={{ backgroundColor: 'var(--bb-bg)' }}>
+    <>
+      <style>{`
+        .suggestion-card:hover {
+          border-color: var(--bb-cyan) !important;
+        }
+      `}</style>
+      <div className="flex h-full overflow-hidden" style={{ backgroundColor: 'var(--bb-bg)' }}>
       {/* History Sidebar */}
       <div
         className="flex-shrink-0 flex flex-col border-r transition-all duration-300 overflow-hidden"
@@ -337,10 +345,13 @@ export default function BlowIA() {
           {/* Conversation list */}
           <div className="flex-1 overflow-y-auto py-2 px-2">
             {conversations.map((conv) => (
-              <button
+              <div
                 key={conv.id}
+                role="button"
+                tabIndex={0}
                 onClick={() => setActiveId(conv.id)}
-                className="group w-full flex items-center gap-2 px-2 py-2 rounded-lg mb-1 text-left transition-all relative"
+                onKeyDown={(e) => e.key === 'Enter' && setActiveId(conv.id)}
+                className="group w-full flex items-center gap-2 px-2 py-2 rounded-lg mb-1 text-left transition-all relative cursor-pointer"
                 style={{
                   backgroundColor: conv.id === activeId ? 'var(--bb-surface-raised)' : 'transparent',
                   color: conv.id === activeId ? 'var(--bb-text)' : 'var(--bb-text-muted)',
@@ -361,7 +372,7 @@ export default function BlowIA() {
                 >
                   <Trash2 className="w-3 h-3" />
                 </button>
-              </button>
+              </div>
             ))}
           </div>
 
@@ -398,11 +409,12 @@ export default function BlowIA() {
           style={{ borderColor: 'var(--bb-border)', backgroundColor: 'var(--bb-surface)' }}
         >
           <div className="flex items-center gap-3">
+            {/* MUDANÇA: Substituído Sparkles por AIIcon personalizado */}
             <div
               className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{ background: 'linear-gradient(135deg, #a855f7, #00d9ff)' }}
+              style={{ background: 'linear-gradient(135deg, var(--bb-purple), var(--bb-cyan))' }}
             >
-              <Sparkles className="w-3.5 h-3.5 text-white" />
+              <AIIcon className="w-3.5 h-3.5 text-white" />
             </div>
             <div>
               <h2 className="text-sm font-semibold" style={{ color: 'var(--bb-text)' }}>
@@ -411,7 +423,7 @@ export default function BlowIA() {
               <div className="flex items-center gap-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-xs" style={{ color: 'var(--bb-text-dim)' }}>
-                  brisaBLOW Neural v2.0
+                  BLOW Neural v2.0
                 </span>
               </div>
             </div>
@@ -431,24 +443,25 @@ export default function BlowIA() {
         <div className="flex-1 overflow-y-auto">
           {isEmptyChat ? (
             <div className="flex flex-col items-center justify-center h-full px-4 py-8 max-w-2xl mx-auto text-center">
+              {/* MUDANÇA: Substituído Sparkles por AIIcon personalizado */}
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
                 style={{ background: 'linear-gradient(135deg, #a855f7 0%, #00d9ff 100%)' }}
               >
-                <Sparkles className="w-7 h-7 text-white" />
+                <AIIcon className="w-7 h-7 text-white" animate={true} />
               </div>
               <h1 className="text-xl font-bold mb-2" style={{ color: 'var(--bb-text)' }}>
                 Blow IA Inteligência
               </h1>
               <p className="text-sm mb-6 max-w-md" style={{ color: 'var(--bb-text-muted)' }}>
-                Assistente inteligente integrado ao cockpit brisaBLOW. Analise a rede, diagnostique problemas e automatize operacoes.
+                Assistente inteligente integrado ao cockpit BLOW. Analise a rede, diagnostique problemas e automatize operacoes.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 w-full max-w-xl">
                 {SUGGESTIONS.map((s, i) => (
                   <button
                     key={i}
                     onClick={() => handleSend(s.prompt)}
-                    className="text-left px-4 py-3 rounded-xl border transition-all hover:border-[#00d9ff]"
+                    className="suggestion-card text-left px-4 py-3 rounded-xl border transition-all"
                     style={{ backgroundColor: 'var(--bb-surface)', borderColor: 'var(--bb-border)', color: 'var(--bb-text)' }}
                   >
                     <span className="text-sm font-medium">{s.label}</span>
@@ -472,11 +485,12 @@ export default function BlowIA() {
                     </div>
                   ) : (
                     <div className="flex gap-3">
+                      {/* MUDANÇA: Substituído Sparkles por AIIcon personalizado */}
                       <div
                         className="w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center mt-1"
-                        style={{ background: 'linear-gradient(135deg, #a855f7, #00d9ff)' }}
+                        style={{ background: 'linear-gradient(135deg, var(--bb-purple), var(--bb-cyan))' }}
                       >
-                        <Sparkles className="w-3.5 h-3.5 text-white" />
+                        <AIIcon className="w-3.5 h-3.5 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-xs mb-2" style={{ color: 'var(--bb-text-dim)' }}>
@@ -515,11 +529,12 @@ export default function BlowIA() {
 
               {isTyping && (
                 <div className="flex gap-3">
+                  {/* MUDANÇA: Substituído Sparkles por AIIcon personalizado */}
                   <div
                     className="w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, #a855f7, #00d9ff)' }}
+                    style={{ background: 'linear-gradient(135deg, var(--bb-purple), var(--bb-cyan))' }}
                   >
-                    <Sparkles className="w-3.5 h-3.5 text-white" />
+                    <AIIcon className="w-3.5 h-3.5 text-white" animate={true} />
                   </div>
                   <div className="flex items-center gap-1 py-2.5">
                     {[0, 1, 2].map((i) => (
@@ -587,6 +602,7 @@ export default function BlowIA() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
@@ -637,7 +653,7 @@ function getFallbackResponse(message: string): string {
 
 Sua consulta sobre **"${message.slice(0, 60)}${message.length > 60 ? '...' : ''}"** foi recebida.
 
-Com base nos dados da rede brisaBLOW:
+Com base nos dados da rede BLOW:
 
 - **SLA atual:** 99.5% - abaixo da meta de 99.9%
 - **Alarmes criticos:** 3 ativos
