@@ -200,3 +200,5 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
     </>
   );
 }
+
+

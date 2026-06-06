@@ -2,9 +2,14 @@
 
 /* ─── BLOW Design Tokens ─── */
 :root {
+<<<<<<< HEAD
   /* ── Fonte base: mobile primeiro ── */
   --font-size: 13px;
   --radius: 0.5rem;
+=======
+  --font-size: 13px;
+  --radius: 0.4rem;
+>>>>>>> 197981374e823ba28a758e08bf8ce6659ff33207
 
   /* Light mode (day) - MUDANÇA: Tema claro ajustado para cinza mais suave, não dói nos olhos */
   --bb-bg: #e8ecf1;

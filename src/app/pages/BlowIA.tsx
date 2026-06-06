@@ -22,7 +22,7 @@ type Conversation = {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const API_BASE = '/api/blow';
+const API_BASE = 'http://localhost:8000/api/agent';
 
 const WELCOME_MESSAGE: Message = {
   id: 'welcome',
@@ -219,13 +219,12 @@ export default function BlowIA() {
         .slice(-10)
         .map((m) => ({ role: m.role, content: m.content }));
 
-      const resp = await fetch(`${API_BASE}/chat`, {
+      const resp = await fetch(`${API_BASE}/chat/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: text,
-          conversation_id: activeId,
-          context,
+          sessionId: activeId,
         }),
       });
 

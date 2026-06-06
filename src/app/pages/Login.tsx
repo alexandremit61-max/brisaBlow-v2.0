@@ -51,11 +51,19 @@ export default function Login() {
               boxShadow: '0 0 30px rgba(0,217,255,0.12)',
             }}
           >
+<<<<<<< HEAD
             <img src={jangadaLogo} alt="BLOW" className="w-10 h-10 object-contain" />
+=======
+            <img src={jangadaLogo} alt="brisaBLOW" className="w-10 h-10 object-contain" />
+>>>>>>> 197981374e823ba28a758e08bf8ce6659ff33207
           </div>
           <h1 className="text-3xl font-black tracking-tight mb-1.5">
             <span style={{ color: 'var(--bb-orange)' }}>BLOW</span>
           </h1>
+<<<<<<< HEAD
+=======
+          
+>>>>>>> 197981374e823ba28a758e08bf8ce6659ff33207
         </div>
 
         {/* Card */}
@@ -131,18 +139,31 @@ export default function Login() {
               type="submit"
               className="w-full h-12 font-bold text-sm rounded-xl shadow-lg transition-all hover:opacity-90 active:scale-[0.98] mt-2"
               style={{
+<<<<<<< HEAD
                 background: 'linear-gradient(135deg, var(--bb-cyan), #0369a1)',
                 color: '#fff',
                 boxShadow: '0 4px 20px rgba(2,132,199,0.25)',
               }}
             >
               Acesse BLOW
+=======
+                background: 'linear-gradient(135deg, #00d9ff, #0099ff)',
+                color: '#000',
+                boxShadow: '0 4px 20px rgba(0,217,255,0.3)',
+              }}
+            >
+              Acessar BLOW
+>>>>>>> 197981374e823ba28a758e08bf8ce6659ff33207
             </Button>
           </form>
         </div>
 
         <p className="text-center text-xs mt-6" style={{ color: 'var(--bb-text-dim)' }}>
+<<<<<<< HEAD
           BLOW v2.0 · Sistema de Monitoramento e Automação
+=======
+          BLOW v1.0 · Sistema de Monitoramento e Automação
+>>>>>>> 197981374e823ba28a758e08bf8ce6659ff33207
         </p>
       </div>
     </div>
